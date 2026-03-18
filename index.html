@@ -1,11 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Plaza Prototype</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La PlaZa</title>
+  <style>
+    /* Body and general text */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', Courier, monospace;
+      height: 100vh;
+      display: flex;
+      justify-content: center; /* horizontal centering */
+      align-items: center;     /* vertical centering */
+      text-align: center;
+    }
+
+    /* Container for text */
+    .text-container {
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      line-height: 1.6;
+      white-space: pre-wrap; /* preserve line breaks */
+    }
+
+    /* Spinning globe */
+    .globe {
+      width: 80px;
+      height: 80px;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      border: 2px solid #00ff00;
+      border-radius: 50%;
+      animation: spin 4s linear infinite;
+    }
+
+    .globe::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 50%;
+      width: 2px; height: 100%;
+      background: #00ff00;
+      transform: translateX(-50%);
+    }
+
+    .globe::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 0;
+      width: 100%; height: 2px;
+      background: #00ff00;
+      transform: translateY(-50%);
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+
+    /* Enter button */
+    .enter-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 25px;
+      color: #000;
+      background-color: #00ff00;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .enter-btn:hover {
+      background-color: #00cc00;
+    }
+
+  </style>
 </head>
 <body>
-  <h1>Welcome to the Plaza</h1>
-  <input type="text" placeholder="Say something..." />
-  <button>Send</button>
+
+  <!-- Spinning globe top-left -->
+  <div class="globe"></div>
+
+  <!-- Centered text -->
+  <div class="text-container">
+    <h1>Bienvenidx a La PlaZa</h1>
+
+    <p>
+La PlaZa es un espacio creado con la finalidad de generar conexiones humanas a través del uso del internet, no ser un producto del internet como hoy en día. Su existencia no depende de métricas, algoritmos, regulaciones ni IA, sin likes ni seguidores, cada uno es igual aquí; simplemente está disponible como un lugar donde las personas pueden aparecer, conversar, observar o simplemente existir. Imagina una plaza en tu ciudad, abierta a todos, pero un poco más grande, porque el alcance del internet es global.
+    </p>
+
+    <p>
+Toda participación en La PlaZa es totalmente voluntaria. No hay expectativas ni obligaciones: puedes decidir hablar, mirar, escuchar o no interactuar en absoluto. No hay normas ni reglas que dicten la conducta de los usuarios, y la plaza no interviene, no guía ni incentiva ninguna acción o conversación. Lo que ocurra dentro depende únicamente de quienes la utilizan, si lo hacen.
+    </p>
+
+    <p>
+La PlaZa no promueve ni prioriza nada; ni intención de generar interacción. Cada persona mantiene control total sobre su presencia, identidad y datos, y nada se almacena con fines de visibilidad o análisis. La plaza es un marco neutral, un espacio que simplemente existe, permitiendo que cualquier tipo de conversación surja de manera libre o que no ocurra nada en absoluto.
+    </p>
+
+    <p>
+En esencia, La PlaZa es un refugio virtual de libertad absoluta, un espacio abierto y neutral donde la tecnología se pone al servicio de la existencia y la decisión humana. Su valor no está en lo que sucede dentro, sino en ofrecer un lugar donde la presencia de cada persona es suficiente, y donde la experiencia de estar allí es completamente libre. Te puedes divertir, como humano digital, enamorar, reflexionar, disfrutar de aburrirse, mirar, aprender todo es tu decisión.
+    </p>
+
+    <!-- Enter button -->
+    <a href="#" class="enter-btn">ENTER</a>
+  </div>
+
 </body>
 </html>
