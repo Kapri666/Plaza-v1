@@ -10,42 +10,48 @@
       margin: 0;
       padding: 0;
       background-color: #000;
-      color: #00ff00;
+      color: #00ff00 !important;
       font-family: 'Courier New', Courier, monospace;
       height: 100vh;
       display: flex;
-      justify-content: center; /* horizontal centering */
-      align-items: center;     /* vertical centering */
+      flex-direction: column;
+      justify-content: center; /* vertical centering */
+      align-items: center;     /* horizontal centering */
       text-align: center;
+      overflow: hidden;
     }
 
     /* Container for text */
     .text-container {
       max-width: 900px;
       padding: 20px;
+      z-index: 1;
     }
 
     h1 {
       font-size: 2em;
       margin-bottom: 20px;
+      color: #00ff00 !important;
     }
 
     p {
       margin-bottom: 20px;
       line-height: 1.6;
       white-space: pre-wrap; /* preserve line breaks */
+      color: #00ff00 !important;
     }
 
     /* Spinning globe */
     .globe {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       position: fixed;
       top: 20px;
       left: 20px;
       border: 2px solid #00ff00;
       border-radius: 50%;
       animation: spin 4s linear infinite;
+      z-index: 10;
     }
 
     .globe::before {
